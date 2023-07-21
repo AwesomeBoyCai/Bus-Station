@@ -8,7 +8,29 @@ export default createRouter({
   routes: [
     {
       path: '/home',
-      component: () => import('@/pages/home/index.vue')
+      component: () => import('@/pages/home/index.vue'),
+      children: [
+        {
+          path: 'first',
+          component: () => import('@/pages/home/first/index.vue')
+        },
+        {
+          path: 'refund',
+          component: () => import('@/pages/home/refund/index.vue')
+        },
+        {
+          path: 'help',
+          component: () => import('@/pages/home/help/index.vue')
+        },
+        {
+          path: 'advise',
+          component: () => import('@/pages/home/advise/index.vue')
+        },
+        {
+          path: 'about',
+          component: () => import('@/pages/home/about/index.vue')
+        }
+      ]
     },
     {
       path: '/',
