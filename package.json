@@ -16,9 +16,13 @@
     }
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "element-plus": "^2.3.8",
+    "sass": "^1.64.0",
+    "vue": "^3.3.4",
+    "vue-router": "4"
   },
   "devDependencies": {
+    "@types/node": "^20.4.2",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
     "@vitejs/plugin-vue": "^4.2.3",
