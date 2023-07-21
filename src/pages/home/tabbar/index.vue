@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="topNav">
-      <el-menu :default-active="$route.path" class="el-menu-demo" ellipsis="false">
+      <el-menu :default-active="$route.path" class="el-menu-demo">
         <el-menu-item index="/home/first" @click="changeActive('/home/first')">
           <el-icon><House /></el-icon>
           <span>首页</span>
@@ -19,7 +19,7 @@
           <span>投诉建议</span>
         </el-menu-item>
         <el-menu-item index="/home/about" @click="changeActive('/home/about')">
-          <el-icon><More /></el-icon>
+          <el-icon><User /></el-icon>
           <span>关于我们</span>
         </el-menu-item>
       </el-menu>
@@ -34,7 +34,7 @@
 //引入路由
 import { useRouter, useRoute } from 'vue-router'
 //左侧菜单需要用到的图标
-import { House, Tickets, Help, Service, More } from '@element-plus/icons-vue'
+import { House, Tickets, Help, Service, User } from '@element-plus/icons-vue'
 //创建路由器实例
 let $router = useRouter()
 //获取当前路由信息来修改刷新高亮不成功问题
@@ -57,6 +57,7 @@ const changeActive = (path: string) => {
       flex: 1;
       display: flex;
       justify-content: center;
+      background-color: #d3e5f1;
     }
     .el-menu-item:hover {
       font-weight: 700;
