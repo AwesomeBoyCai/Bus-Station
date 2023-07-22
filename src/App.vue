@@ -1,11 +1,10 @@
 <template>
+  <BusTop />
   <div class="container">
-    <BusTop />
     <!-- 展示路由组建的区域 -->
     <div class="content">
       <router-view></router-view>
     </div>
-    <BusBottom />
   </div>
 </template>
 
@@ -16,10 +15,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: aquamarine;
   .content {
     margin-top: 70px;
     width: 1200px;
-    min-height: 700px;
+    // min-height: 700px;
   }
 }
 </style>

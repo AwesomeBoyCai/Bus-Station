@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="box">
     <div class="topNav">
       <el-menu :default-active="$route.path" class="el-menu-demo">
         <el-menu-item index="/home/first" @click="changeActive('/home/first')">
@@ -25,7 +25,7 @@
       </el-menu>
     </div>
     <div class="content">
-      <router-view></router-view>
+      <!-- <router-view></router-view> -->
     </div>
   </div>
 </template>
@@ -46,10 +46,14 @@ const changeActive = (path: string) => {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.box {
   margin-top: 30px;
   width: 100%;
   height: 80px;
+  // background-color: #eef1f6;
+  .content {
+    min-height: 700px;
+  }
   .el-menu {
     width: 100%;
     display: flex;

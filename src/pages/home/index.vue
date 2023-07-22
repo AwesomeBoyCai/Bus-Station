@@ -2,6 +2,7 @@
   <div>
     <CarouselTop />
     <Tabbar />
+    <router-view></router-view>
   </div>
 </template>
 

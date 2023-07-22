@@ -25,6 +25,7 @@
 
   display: flex;
   justify-content: center;
+  background-color: #fff;
   .content {
     width: 1200px;
     height: 70px;

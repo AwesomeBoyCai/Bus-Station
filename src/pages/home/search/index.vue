@@ -32,7 +32,7 @@
           <el-input v-model="phoneInfo.code" placeholder="请输入验证码" size="large"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button :icon="Search" type="primary" size="large">提交</el-button>
+          <el-button :icon="Upload" type="primary" size="large">提交</el-button>
         </el-form-item>
       </el-form>
     </el-tab-pane>
@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Search } from '@element-plus/icons-vue'
+import { Search, Upload } from '@element-plus/icons-vue'
 import { ref, reactive } from 'vue'
 //引入标签页
 import type { TabsPaneContext } from 'element-plus'

@@ -12,23 +12,23 @@ export default createRouter({
       children: [
         {
           path: 'first',
-          component: () => import('@/pages/home/first/index.vue')
+          component: () => import('@/views/first/index.vue')
         },
         {
           path: 'refund',
-          component: () => import('@/pages/home/refund/index.vue')
+          component: () => import('@/views/refund/index.vue')
         },
         {
           path: 'help',
-          component: () => import('@/pages/home/help/index.vue')
+          component: () => import('@/views/help/index.vue')
         },
         {
           path: 'advise',
-          component: () => import('@/pages/home/advise/index.vue')
+          component: () => import('@/views/advise/index.vue')
         },
         {
           path: 'about',
-          component: () => import('@/pages/home/about/index.vue')
+          component: () => import('@/views/about/index.vue')
         }
       ]
     },
@@ -36,5 +36,12 @@ export default createRouter({
       path: '/',
       redirect: '/home/first'
     }
-  ]
+  ],
+  //滚动行为
+  scrollBehavior() {
+    return {
+      left: 0,
+      top: 0
+    }
+  }
 })
