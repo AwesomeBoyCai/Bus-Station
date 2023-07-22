@@ -34,7 +34,7 @@ export default createRouter({
     },
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/home/first'
     }
   ]
 })
