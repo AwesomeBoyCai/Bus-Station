@@ -24,7 +24,11 @@
         </div>
         <div class="right-info">
           <div>
-            <span class="cityName">{{ item.start_region }}</span>
+            <span class="cityName">
+              {{ item.start_region }}
+              <Right style="width: 20px; height: 20px" />
+              {{ item.final_region }}
+            </span>
             <span class="price">
               ￥
               <span>{{ item.price }}</span>
@@ -42,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowRightBold } from '@element-plus/icons-vue'
+import { ArrowRightBold, Right } from '@element-plus/icons-vue'
 //引入组合式API
 import { reactive } from 'vue'
 //热门线路信息存储
@@ -217,7 +221,7 @@ const lineInfoArr = reactive<any>([
           justify-content: space-between;
           .cityName {
             color: #333333;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             line-height: 18px;
             display: flex;
