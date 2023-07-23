@@ -7,14 +7,20 @@
         <p>陕西省客运互联网售票平台</p>
       </div>
       <div class="right">
-        <p class="help">帮助中心</p>
-        <p class="login">登录/注册</p>
+        <ul>
+          <li class="login">
+            <el-button :icon="Avatar" round color="#5678a8">请登录</el-button>
+          </li>
+          <li>注册</li>
+        </ul>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Avatar } from '@element-plus/icons-vue'
+</script>
 
 <style lang="scss" scoped>
 .top {
@@ -53,11 +59,13 @@
       justify-content: center;
       font-size: 14px;
       color: #bbb;
-      .help {
-        margin-right: 10px;
-      }
-      .login {
-        cursor: pointer;
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li {
+          margin: 0 10px;
+        }
       }
     }
   }
