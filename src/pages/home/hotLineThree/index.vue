@@ -4,12 +4,12 @@
     <div class="header">
       <!-- 背景图片 -->
       <div class="header-left">
-        <span class="hotTitle">景区一日游</span>
+        <span class="hotTitle">周末省心游</span>
         <span class="IconBox">
-          <ArrowRightBold color="#77aaf9" style="width: 10px; height: 10px; margin: 5px auto" />
+          <ArrowRightBold color="#47ccb7" style="width: 10px; height: 10px; margin: 5px auto" />
         </span>
       </div>
-      <img src="@/assets/image/theme_12.png" alt="" />
+      <img src="@/assets/image/theme_15.png" alt="" />
     </div>
     <!-- 内容区域 -->
     <ul class="content">
@@ -112,12 +112,12 @@ const lineInfoArr = reactive<any>([
     width: 100%;
     height: 68px;
     border-radius: 8px;
-    background: url('@/assets/image/theme_bg3.jpg');
+    background: url('@/assets/image/theme_bg1.jpg');
     background-size: cover;
     background-position: center;
     .header-left {
       display: flex;
-      width: 150px;
+      width: 160px;
       height: 100%;
       justify-content: space-around;
       align-items: center;
