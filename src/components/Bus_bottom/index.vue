@@ -21,6 +21,7 @@
   background: #f0f2f5;
   display: flex;
   justify-content: center;
+  margin-top: 30px;
   .content {
     width: 1200px;
     height: 100%;

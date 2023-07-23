@@ -46,8 +46,4 @@ import HotLineTwo from '@/pages/home/hotLineTwo/index.vue'
 import StationIntro from '@/pages/home/stationIntro/index.vue'
 </script>
 
-<style lang="scss" scoped>
-.container {
-  margin-top: 30px;
-}
-</style>
+<style lang="scss" scoped></style>
