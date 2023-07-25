@@ -33,6 +33,10 @@ export default createRouter({
       ]
     },
     {
+      path: '/login',
+      component: () => import('@/components/Login/index.vue')
+    },
+    {
       path: '/',
       redirect: '/home/first'
     }

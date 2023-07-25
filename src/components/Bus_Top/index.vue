@@ -9,7 +9,7 @@
       <div class="right">
         <ul>
           <li class="login">
-            <el-button :icon="Avatar" round color="#5678a8">请登录</el-button>
+            <el-button :icon="Avatar" round color="#5678a8" @click="login">请登录</el-button>
           </li>
           <li>注册</li>
         </ul>
@@ -20,6 +20,15 @@
 
 <script setup lang="ts">
 import { Avatar } from '@element-plus/icons-vue'
+//引入路由器
+import { useRouter } from 'vue-router'
+//创造路由器实例
+let $router = useRouter()
+
+//登录
+let login = () => {
+  $router.push('/login')
+}
 </script>
 
 <style lang="scss" scoped>
