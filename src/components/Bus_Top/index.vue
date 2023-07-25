@@ -12,7 +12,7 @@
           <li class="login">
             <el-button :icon="Avatar" round color="#5678a8" @click="login">请登录</el-button>
           </li>
-          <li>注册</li>
+          <li style="cursor: pointer" @click="goRegister">注册</li>
         </ul>
       </div>
     </div>
@@ -30,9 +30,15 @@ let $router = useRouter()
 let goHome = () => {
   $router.push('/home/first')
 }
-//登录
+//跳转到登录
 let login = () => {
   $router.push('/login')
+}
+//跳转到注册页面
+let goRegister = () => {
+  $router.push({
+    path: '/login/register'
+  })
 }
 </script>
 
