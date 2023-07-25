@@ -2,12 +2,13 @@
   <div class="top">
     <div class="content">
       <!-- 左侧 -->
-      <div class="left">
+      <div class="left" @click="goHome">
         <img src="../../assets/image/logo.png" alt="" />
         <p>陕西省客运互联网售票平台</p>
       </div>
       <div class="right">
         <ul>
+          <li></li>
           <li class="login">
             <el-button :icon="Avatar" round color="#5678a8" @click="login">请登录</el-button>
           </li>
@@ -25,6 +26,10 @@ import { useRouter } from 'vue-router'
 //创造路由器实例
 let $router = useRouter()
 
+//回到主页函数
+let goHome = () => {
+  $router.push('/home/first')
+}
 //登录
 let login = () => {
   $router.push('/login')

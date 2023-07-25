@@ -34,7 +34,22 @@ export default createRouter({
     },
     {
       path: '/login',
-      component: () => import('@/components/Login/index.vue')
+      component: () => import('@/pages/userLogin/index.vue'),
+      redirect: '/login/userLogin',
+      children: [
+        {
+          path: 'userLogin',
+          component: () => import('@/pages/userLogin/login.vue')
+        },
+        {
+          path: 'register',
+          component: () => import('@/pages/userLogin/register.vue')
+        },
+        {
+          path: 'codeLogin',
+          component: () => import('@/pages/userLogin/codeLogin.vue')
+        }
+      ]
     },
     {
       path: '/',
