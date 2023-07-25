@@ -34,16 +34,16 @@
 </template>
 
 <script setup lang="ts">
-import Search from '@/pages/home/search/index.vue'
+import Search from '@/views/first/search/index.vue'
 //@ts-ignore
-import CarouselMain from '@/pages/home/carouselMain/index.vue'
-import Notice from '@/pages/home/notice/index.vue'
-import Process from '@/pages/home/process/index.vue'
+import CarouselMain from '@/views/first/carouselMain/index.vue'
+import Notice from '@/views/first/notice/index.vue'
+import Process from '@/views/first/process/index.vue'
 //引入热门线路组件
-import HotLineOne from '@/pages/home/hotLineOne/index.vue'
+import HotLineOne from '@/views/first/hotLineOne/index.vue'
 //引入热门线路组件
-import HotLineTwo from '@/pages/home/hotLineTwo/index.vue'
-import HotLineThree from '@/pages/home/hotLineThree/index.vue'
+import HotLineTwo from '@/views/first/hotLineTwo/index.vue'
+import HotLineThree from '@/views/first/hotLineThree/index.vue'
 // import StationIntro from '@/pages/home/stationIntro/index.vue'
 </script>
 
