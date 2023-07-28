@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <CarouselTop />
     <Tabbar />
     <router-view></router-view>

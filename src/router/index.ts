@@ -12,23 +12,104 @@ export default createRouter({
       children: [
         {
           path: 'first',
-          component: () => import('@/views/first/index.vue')
+          component: () => import('@/views/first/index.vue'),
+          meta: {
+            title: '首页'
+          }
         },
         {
           path: 'refund',
-          component: () => import('@/views/refund/index.vue')
+          component: () => import('@/views/refund/index.vue'),
+          meta: {
+            title: '退票'
+          }
         },
         {
           path: 'help',
-          component: () => import('@/views/help/index.vue')
+          component: () => import('@/views/help/index.vue'),
+          meta: {
+            title: '帮助中心'
+          }
         },
         {
           path: 'advise',
-          component: () => import('@/views/advise/index.vue')
+          component: () => import('@/views/advise/index.vue'),
+          meta: {
+            title: '投诉建议'
+          }
         },
         {
           path: 'about',
-          component: () => import('@/views/about/index.vue')
+          component: () => import('@/views/about/index.vue'),
+          meta: {
+            title: '关于我们'
+          }
+        }
+      ]
+    },
+    {
+      path: '/person',
+      component: () => import('@/pages/person/index.vue'),
+      meta: {
+        title: '个人中心'
+      },
+      redirect: '/person/baseInfo',
+      children: [
+        {
+          path: 'baseInfo',
+          component: () => import('@/pages/person/baseInfo/index.vue'),
+          meta: {
+            title: '基本资料'
+          }
+        },
+        {
+          path: 'changePassword',
+          component: () => import('@/pages/person/changePassword/index.vue'),
+          meta: {
+            title: '修改密码'
+          }
+        },
+        {
+          path: 'passenger',
+          component: () => import('@/pages/person/passenger/index.vue'),
+          meta: {
+            title: '常用乘车人'
+          }
+        },
+        {
+          path: 'contacts',
+          component: () => import('@/pages/person/contacts/index.vue'),
+          meta: {
+            title: '常用联系人'
+          }
+        },
+        {
+          path: 'allOrder',
+          component: () => import('@/pages/person/allOrder/index.vue'),
+          meta: {
+            title: '所有订单'
+          }
+        },
+        {
+          path: 'paidOrder',
+          component: () => import('@/pages/person/paidOrder/index.vue'),
+          meta: {
+            title: '已支付订单'
+          }
+        },
+        {
+          path: 'waitOrder',
+          component: () => import('@/pages/person/waitOrder/index.vue'),
+          meta: {
+            title: '待支付订单'
+          }
+        },
+        {
+          path: 'refundOrder',
+          component: () => import('@/pages/person/refundOrder/index.vue'),
+          meta: {
+            title: '退款完成'
+          }
         }
       ]
     },
@@ -39,15 +120,24 @@ export default createRouter({
       children: [
         {
           path: 'userLogin',
-          component: () => import('@/pages/userLogin/login.vue')
+          component: () => import('@/pages/userLogin/login.vue'),
+          meta: {
+            title: '登录'
+          }
         },
         {
           path: 'register',
-          component: () => import('@/pages/userLogin/register.vue')
+          component: () => import('@/pages/userLogin/register.vue'),
+          meta: {
+            title: '注册'
+          }
         },
         {
           path: 'codeLogin',
-          component: () => import('@/pages/userLogin/codeLogin.vue')
+          component: () => import('@/pages/userLogin/codeLogin.vue'),
+          meta: {
+            title: '验证码登录'
+          }
         }
       ]
     },
