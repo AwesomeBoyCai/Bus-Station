@@ -24,9 +24,7 @@
         </el-menu-item>
       </el-menu>
     </div>
-    <div class="content">
-      <!-- <router-view></router-view> -->
-    </div>
+    <div class="content"></div>
   </div>
 </template>
 

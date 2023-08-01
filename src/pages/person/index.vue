@@ -74,11 +74,13 @@ const changeActive = (path: string) => {
       text-align: center;
       padding: 20px 0;
       h3 {
-        font-weight: 700;
         font-size: 22px;
         margin: 20px 0;
       }
     }
+  }
+  .el-card {
+    min-height: 700px;
   }
 }
 </style>
