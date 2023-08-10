@@ -45,6 +45,18 @@ import HotLineOne from '@/views/first/hotLineOne/index.vue'
 import HotLineTwo from '@/views/first/hotLineTwo/index.vue'
 import HotLineThree from '@/views/first/hotLineThree/index.vue'
 // import StationIntro from '@/pages/home/stationIntro/index.vue'
+//挂载发起请求
+import { onMounted } from 'vue'
+//引入获取信息请求
+import { reqUserInfo } from '@/api/user/index'
+
+onMounted(() => {
+  getUserInfo()
+})
+
+const getUserInfo = () => {
+  reqUserInfo()
+}
 </script>
 
 <style lang="scss" scoped></style>

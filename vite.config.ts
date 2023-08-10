@@ -8,5 +8,14 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
+  },
+  //配置代理跨域
+  server: {
+    proxy: {
+      '/api': {
+        // target: '192.168.31.138:8060',
+        changeOrigin: true
+      }
+    }
   }
 })

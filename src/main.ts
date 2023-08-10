@@ -13,12 +13,16 @@ import App from '@/App.vue'
 //引入全局组件 --顶部 --底部
 import BusTop from '@/components/Bus_Top/index.vue'
 import BusBottom from '@/components/Bus_bottom/index.vue'
+//引入pinia
+import pinia from '@/store/index'
 //利用createApp方法创建应用实例，且将应用实例挂载到挂载点上
 const app = createApp(App)
 //安装
 app.use(ElementPlus, {
   locale: zhCn
 })
+//安装pinia
+app.use(pinia)
 //安装全局组件
 app.component('BusTop', BusTop)
 app.component('BusBottom', BusBottom)

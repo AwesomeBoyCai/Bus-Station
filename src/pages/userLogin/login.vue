@@ -16,7 +16,7 @@
         <el-input v-model="loginParam.ass" type="password" autocomplete="off" placeholder="登录密码" size="large" />
       </el-form-item>
       <el-form-item class="buttonBox">
-        <el-button type="primary" class="loginBtn" color="#FF9A14">登录</el-button>
+        <el-button type="primary" class="loginBtn" color="#FF9A14" @click="login">登录</el-button>
       </el-form-item>
     </el-form>
     <div class="agreeList">
@@ -39,12 +39,26 @@
 //引入路由器
 import { useRouter } from 'vue-router'
 import { reactive, ref } from 'vue'
+//引入仓库
+// @ts-ignore
+import useUserStore from '@/store/user.ts'
+let userStore = useUserStore()
+//
+let loginData = ref({
+  username: 'admin',
+  password: '111111'
+})
+
 //使用路由器
 let $router = useRouter()
 const loginParam = reactive<any>({
   count: '',
   password: ''
 })
+const login = async () => {
+  userStore.login(loginData.value)
+  // console.log(result)
+}
 //
 let goCodeLogin = () => {
   $router.push({
