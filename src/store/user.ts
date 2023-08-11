@@ -1,8 +1,7 @@
 //定义用户相关的仓库
 import { defineStore } from 'pinia'
-
 //引入接口
-import { reqUserLogin, reqUserInfo } from '@/api/user/index'
+import { reqUserLogin, reqUserInfo, reqUserInfoEdit } from '@/api/user/index'
 //引入类型
 import { userProfileInfoType } from '@/api/user/type'
 //用户仓库
@@ -35,6 +34,18 @@ const useUserStore = defineStore('User', {
         //本地持久化存储
         localStorage.setItem('token', JSON.stringify(this.userToken))
       }
+    },
+    //修改用户信息
+    async editUserInfo(params: any) {
+      let result: any = await reqUserInfoEdit(params)
+
+      //修改完成后
+      // 仓库重新存储
+      if (result.code === 200) {
+        this.userInfo = params
+        localStorage.setItem('userInfo', JSON.stringify(params))
+      }
+      console.log(result)
     },
     //退出登录函数
     //清除本地存储的个人信息和token

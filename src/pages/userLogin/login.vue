@@ -8,7 +8,7 @@
           v-model="loginData.username"
           type="password"
           autocomplete="off"
-          placeholder="国内手机号/用户名"
+          placeholder="账号/用户名"
           size="large"
         />
       </el-form-item>

@@ -25,7 +25,7 @@
                 </span>
                 <template #dropdown>
                   <el-dropdown-menu>
-                    <el-dropdown-item>
+                    <el-dropdown-item @click="goPerson">
                       <el-icon><User /></el-icon>
                       个人中心
                     </el-dropdown-item>
@@ -72,6 +72,12 @@ const login = () => {
 const goRegister = () => {
   $router.push({
     path: '/login/register'
+  })
+}
+//跳转到个人中心
+const goPerson = () => {
+  $router.push({
+    path: '/person'
   })
 }
 //退出登录
