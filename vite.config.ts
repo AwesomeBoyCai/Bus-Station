@@ -12,9 +12,11 @@ export default defineConfig({
   //配置代理跨域
   server: {
     proxy: {
-      '/api': {
-        // target: '192.168.31.138:8060',
-        changeOrigin: true
+      '/bus-ticket': {
+        target: 'http://192.168.31.138:8060/bus-ticket',
+        changeOrigin: true,
+
+        rewrite: path => path.replace(/^\/bus-ticket/, '') //重写路径,替换/api
       }
     }
   }

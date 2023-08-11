@@ -1,21 +1,19 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 //引入用户仓库
-import useUserStore from '@/store/user'
+// import useUserStore from '@/store/user'
 
 //利用axios.create方法创建一个axios实例
 const request = axios.create({
-  baseURL: '/api', //请求基础路径设置
+  baseURL: '/bus-ticket', //请求基础路径设置
   timeout: 5000 //超时的时间设置，超出5s请求就是失败
 })
 
 //请求拦截器
 request.interceptors.request.use(config => {
-  let userStore = useUserStore()
   //如果存在token就在请求头携带token参数
-  if (userStore.userToken) {
-    console.log(config.headers)
-    config.headers.token = userStore.userToken
+  if (localStorage.getItem('token')) {
+    config.headers.Authorization = localStorage.getItem('token')
   }
   return config
 })

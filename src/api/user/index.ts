@@ -1,11 +1,24 @@
 //引入二次封装axios
 import request from '@/utils/request'
-
+//引入对应接口ts类型
+import { userProfileInfoType } from '@/api/user/type'
 //枚举类型
 enum API {
-  USERLOGIN = 'http://192.168.31.138:8060/bus-ticket/user/login',
-  USERINFO = 'http://192.168.31.138:8060/bus-ticket/user/getProfile'
+  USERLOGIN_URL = '/user/login',
+  USERINFO_URL = '/user/getProfile'
 }
 
-export const reqUserLogin = (data: any) => request.post<any>(API.USERLOGIN, data)
-export const reqUserInfo = () => request.get<any>(API.USERINFO)
+//请求的二次封装
+//用户登录借口
+export const reqUserLogin = (params: any) =>
+  request<any>({
+    url: API.USERLOGIN_URL,
+    method: 'POST',
+    data: params
+  })
+//获取用户信息接口
+export const reqUserInfo = () =>
+  request<any, userProfileInfoType>({
+    url: API.USERINFO_URL,
+    method: 'GET'
+  })

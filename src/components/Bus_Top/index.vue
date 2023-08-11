@@ -10,9 +10,37 @@
         <ul>
           <li></li>
           <li class="login">
-            <el-button :icon="Avatar" round color="#5678a8" @click="login">请登录</el-button>
+            <!-- 未登录 -->
+            <el-button :icon="Avatar" round color="#5678a8" @click="login" v-if="!userStore.userInfo.nickname">
+              请登录
+            </el-button>
+            <div class="userInfo" v-else>
+              <img :src="userStore.userInfo.photo" alt="" />
+              <el-dropdown size="large">
+                <span class="el-dropdown-link">
+                  {{ userStore.userInfo.nickname }}
+                  <el-icon class="el-icon--right">
+                    <arrow-down />
+                  </el-icon>
+                </span>
+                <template #dropdown>
+                  <el-dropdown-menu>
+                    <el-dropdown-item>
+                      <el-icon><User /></el-icon>
+                      个人中心
+                    </el-dropdown-item>
+                    <el-dropdown-item>Action 2</el-dropdown-item>
+                    <el-dropdown-item>Action 3</el-dropdown-item>
+                    <el-dropdown-item divided @click="loginOut">
+                      <el-icon><SwitchButton /></el-icon>
+                      退出登录
+                    </el-dropdown-item>
+                  </el-dropdown-menu>
+                </template>
+              </el-dropdown>
+            </div>
           </li>
-          <li style="cursor: pointer" @click="goRegister">注册</li>
+          <li style="cursor: pointer" @click="goRegister" v-if="!userStore.userInfo.nickname">注册</li>
         </ul>
       </div>
     </div>
@@ -20,25 +48,54 @@
 </template>
 
 <script setup lang="ts">
-import { Avatar } from '@element-plus/icons-vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
+import { Avatar, ArrowDown, SwitchButton, User } from '@element-plus/icons-vue'
 //引入路由器
 import { useRouter } from 'vue-router'
+//引入用户仓库
+import useUserStore from '@/store/user'
+//创建仓库实例
+let userStore = useUserStore()
+
 //创造路由器实例
 let $router = useRouter()
 
 //回到主页函数
-let goHome = () => {
+const goHome = () => {
   $router.push('/home/first')
 }
 //跳转到登录
-let login = () => {
+const login = () => {
   $router.push('/login')
 }
 //跳转到注册页面
-let goRegister = () => {
+const goRegister = () => {
   $router.push({
     path: '/login/register'
   })
+}
+//退出登录
+const loginOut = () => {
+  //调用仓库的退出登录函数
+  ElMessageBox.confirm('是否确定退出登录', {
+    confirmButtonText: '确认',
+    cancelButtonText: '取消',
+    type: 'warning'
+  })
+    .then(() => {
+      //调用仓库中退出登录函数
+      userStore.loginOut()
+      ElMessage({
+        type: 'success',
+        message: '成功退出登录'
+      })
+    })
+    .catch(() => {
+      ElMessage({
+        type: 'info',
+        message: '已取消'
+      })
+    })
 }
 </script>
 
@@ -86,8 +143,24 @@ let goRegister = () => {
         li {
           margin: 0 10px;
         }
+        .userInfo {
+          display: flex;
+          align-items: center;
+          img {
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+            border-radius: 20px;
+          }
+        }
       }
     }
   }
+}
+.example-showcase .el-dropdown-link {
+  cursor: pointer;
+  color: var(--el-color-primary);
+  display: flex;
+  align-items: center;
 }
 </style>

@@ -2,10 +2,10 @@
   <!-- 登录组件 -->
   <div class="loginBox">
     <h2>账号密码登录</h2>
-    <el-form :model="loginParam" status-icon class="demo-ruleForm">
+    <el-form :model="loginData" status-icon class="demo-ruleForm">
       <el-form-item prop="count">
         <el-input
-          v-model="loginParam.count"
+          v-model="loginData.username"
           type="password"
           autocomplete="off"
           placeholder="国内手机号/用户名"
@@ -13,7 +13,7 @@
         />
       </el-form-item>
       <el-form-item prop="password">
-        <el-input v-model="loginParam.ass" type="password" autocomplete="off" placeholder="登录密码" size="large" />
+        <el-input v-model="loginData.password" type="password" autocomplete="off" placeholder="登录密码" size="large" />
       </el-form-item>
       <el-form-item class="buttonBox">
         <el-button type="primary" class="loginBtn" color="#FF9A14" @click="login">登录</el-button>
@@ -38,25 +38,27 @@
 <script lang="ts" setup>
 //引入路由器
 import { useRouter } from 'vue-router'
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 //引入仓库
 // @ts-ignore
 import useUserStore from '@/store/user.ts'
 let userStore = useUserStore()
-//
-let loginData = ref({
-  username: 'admin',
-  password: '111111'
+//登录账号密码
+const loginData = ref<any>({
+  username: '',
+  password: ''
 })
 
 //使用路由器
 let $router = useRouter()
-const loginParam = reactive<any>({
-  count: '',
-  password: ''
-})
 const login = async () => {
+  //登录 存储token
   userStore.login(loginData.value)
+  //并且获取用户信息 本地存储
+  userStore.getUserInfo()
+  $router.push({
+    path: '/home/first'
+  })
   // console.log(result)
 }
 //
