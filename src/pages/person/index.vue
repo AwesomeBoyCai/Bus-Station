@@ -24,11 +24,11 @@
             </el-menu-item>
             <h3>订单管理</h3>
             <el-menu-item index="/person/allOrder" @click="changeActive('/person/allOrder')">
-              <el-icon><List /></el-icon>
+              <el-icon><Tickets /></el-icon>
               <span>所有订单</span>
             </el-menu-item>
             <el-menu-item index="/person/paidOrder" @click="changeActive('/person/paidOrder')">
-              <el-icon><Checked /></el-icon>
+              <el-icon><DocumentChecked /></el-icon>
               <span>已支付订单</span>
             </el-menu-item>
             <el-menu-item index="/person/waitOrder" @click="changeActive('/person/waitOrder')">
@@ -37,7 +37,7 @@
             </el-menu-item>
             <el-menu-item index="/person/refundOrder" @click="changeActive('/person/refundOrder')">
               <el-icon><Wallet /></el-icon>
-              <span>退款</span>
+              <span>已退款订单</span>
             </el-menu-item>
           </el-menu>
         </div>
@@ -51,7 +51,7 @@
 
 <script lang="ts" setup>
 //引入图标
-import { User, Unlock, List, Checked, Clock, Wallet, Message, Van } from '@element-plus/icons-vue'
+import { User, Unlock, DocumentChecked, Tickets, Clock, Wallet, Message, Van } from '@element-plus/icons-vue'
 //引入路由器跳转
 import { useRouter, useRoute } from 'vue-router'
 //获取当前路由信息来修改刷新高亮不成功问题
