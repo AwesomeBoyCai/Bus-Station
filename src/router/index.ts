@@ -48,6 +48,13 @@ export default createRouter({
       ]
     },
     {
+      path: '/purchase',
+      component: () => import('@/pages/bus_ticket/index.vue'),
+      meta: {
+        title: '购票中心'
+      }
+    },
+    {
       path: '/person',
       component: () => import('@/pages/person/index.vue'),
       meta: {
