@@ -52,7 +52,17 @@ export default createRouter({
       component: () => import('@/pages/bus_ticket/index.vue'),
       meta: {
         title: '购票中心'
-      }
+      },
+      redirect: '/purchase/searchTicket',
+      children: [
+        {
+          path: 'searchTicket',
+          component: () => import('@/pages/bus_ticket/searchTicket/index.vue'),
+          meta: {
+            title: '查询车票'
+          }
+        }
+      ]
     },
     {
       path: '/person',
