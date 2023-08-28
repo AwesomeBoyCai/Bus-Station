@@ -94,13 +94,6 @@ export default createRouter({
           }
         },
         {
-          path: 'contacts',
-          component: () => import('@/pages/person/contacts/index.vue'),
-          meta: {
-            title: '常用联系人'
-          }
-        },
-        {
           path: 'allOrder',
           component: () => import('@/pages/person/allOrder/index.vue'),
           meta: {

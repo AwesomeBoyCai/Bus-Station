@@ -9,7 +9,9 @@ enum API {
   // 获取用户信息
   USERINFO_URL = '/user/getProfile',
   // 修改用户信息
-  USERINFOEDIT_URL = '/user/modifyProfile'
+  USERINFOEDIT_URL = '/user/modifyProfile',
+  //修改密码接口
+  USERPASSEDIT_URL = '​/user​/modifyPassword'
 }
 
 //请求的二次封装
@@ -19,3 +21,5 @@ export const reqUserLogin = (params: any) => request.post<any, any>(API.USERLOGI
 export const reqUserInfo = () => request.get<any, userProfileInfoType>(API.USERINFO_URL)
 //修改用户信息接口
 export const reqUserInfoEdit = (params: userProfileInfoType) => request.post<any, any>(API.USERINFOEDIT_URL, params)
+//修改用户密码接口
+export const reqUserPassEdit = (params: any) => request.post<any, any>(API.USERPASSEDIT_URL, params)

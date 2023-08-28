@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/bus-ticket': {
-        target: 'http://192.168.31.138:8060/bus-ticket',
+        target: 'http://8.137.17.16:8060/bus-ticket',
         changeOrigin: true,
 
         rewrite: path => path.replace(/^\/bus-ticket/, '') //重写路径,替换/api

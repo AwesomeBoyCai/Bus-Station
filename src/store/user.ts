@@ -30,7 +30,6 @@ const useUserStore = defineStore('User', {
       let result: userProfileInfoType = await reqUserInfo()
       if (result.code === 200) {
         //本地持久化存储
-
         const {
           card_number: cardNumber,
           card_type: cardType,
@@ -63,6 +62,12 @@ const useUserStore = defineStore('User', {
         this.userToken = result.token
         //本地持久化存储
         localStorage.setItem('token', JSON.stringify(this.userToken))
+        return 'ok'
+      } else {
+        return ElMessage({
+          type: 'error',
+          message: '账号或密码错误'
+        })
       }
     },
     //修改用户信息

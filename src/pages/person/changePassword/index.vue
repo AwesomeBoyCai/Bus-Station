@@ -17,7 +17,7 @@
             <el-input v-model="editForm.check_Pwd" :show-password="true" size="large"></el-input>
           </el-form-item>
 
-          <el-button style="width: 50%" type="danger" class="submitBtn" size="large">提 交</el-button>
+          <el-button style="width: 50%" type="danger" class="submitBtn" size="large" @click="editPass">提 交</el-button>
         </el-form>
       </div>
     </el-card>
@@ -27,12 +27,23 @@
 <script lang="ts" setup>
 import { Unlock } from '@element-plus/icons-vue'
 import { reactive } from 'vue'
+import { reqUserPassEdit } from '@/api/user/index'
 //账号密码
 const editForm = reactive({
   old_password: '',
   password: '',
   check_Pwd: ''
 })
+//修改密码
+const editPass = async () => {
+  console.log(reqUserPassEdit)
+
+  let result: any = reqUserPassEdit({
+    password: editForm.old_password,
+    newPassword: editForm.check_Pwd
+  })
+  console.log(result)
+}
 </script>
 
 <style lang="scss" scoped>

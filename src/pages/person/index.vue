@@ -18,10 +18,6 @@
               <el-icon><Van /></el-icon>
               <span>常用乘车人</span>
             </el-menu-item>
-            <el-menu-item index="/person/contacts" @click="changeActive('/person/contacts')">
-              <el-icon><Message /></el-icon>
-              <span>常用联系人</span>
-            </el-menu-item>
             <h3>订单管理</h3>
             <el-menu-item index="/person/allOrder" @click="changeActive('/person/allOrder')">
               <el-icon><Tickets /></el-icon>
@@ -51,7 +47,7 @@
 
 <script lang="ts" setup>
 //引入图标
-import { User, Unlock, DocumentChecked, Tickets, Clock, Wallet, Message, Van } from '@element-plus/icons-vue'
+import { User, Unlock, DocumentChecked, Tickets, Clock, Wallet, Van } from '@element-plus/icons-vue'
 //引入路由器跳转
 import { useRouter, useRoute } from 'vue-router'
 //获取当前路由信息来修改刷新高亮不成功问题

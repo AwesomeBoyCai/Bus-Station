@@ -91,6 +91,8 @@ const loginOut = () => {
     .then(() => {
       //调用仓库中退出登录函数
       userStore.loginOut()
+      //跳转主页
+      $router.push('/home/first')
       ElMessage({
         type: 'success',
         message: '成功退出登录'
